@@ -1,21 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
-<meta charset="UTF-8">
-<title>Page Title</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="">
-<style>
-html,body {font-family:"Verdana",sans-serif}
-h1,h2,h3,h4,h5,h6 {font-family:"Segoe UI",sans-serif}
-</style>
-<script src=""></script>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Talking Head Anime from a Single Image 2: More Expressive (Full Version)</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">    
+    <link href="css/theme.css" rel="stylesheet">
+
+    <!-- MathJax -->
+    <script>
+    MathJax = {
+	  tex: {
+	    inlineMath: [['$', '$'], ['\\(', '\\)']]
+	  },
+	  svg: {
+	    fontCache: 'global'
+	  }
+	};
+    </script>
+    <script src="mathjax/tex-chtml.js" id="MathJax-script" async></script>    
+    <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="js/bigfoot.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bigfoot-default.css">
+  </head>
+
+  <body>
+  	 <nav class="navbar navbar-expand-md navbar-light fixed-bottom bg-light">
+      <div class="collapse navbar-collapse justify-content-center" id="navbarCollapse">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">&nbsp; &nbsp; Top</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#non-rel_QM">Non-rel QM</a>
+          </li>          
+          <li class="nav-item">
+            <a class="nav-link" href="#astrophysics">Astrophysics</a>
+          </li>
+        </ul>        
+      </div>
+    </nav>
+
 <body>
 
-<h1>Physics Matters</h1>
-<h2>Quantum Mechanics: Electromagnetic Waves and Schrodinger equation</h2>
-<p>Motivation: diffraction phenomenon in diffraction.
-    $\exp{i\mathbf{k}\cdot\mathbf{r} - i \omega t}$
+<h1 align="center">Physics Matters</h1>
+
+<p>This site documents detailed derivations and uncommon findings of different topics in classical, quantum, statistical, computational, astronomical physics. Feel free to check out the pdf compiled with latex in <a href="https://github.com/kittenK531/physics-notes">Kei's repository for online notes</a>.</p>
+
+<a name="non-rel_QM"></a>
+<h2 align="center">Quantum Mechanics</h2>
+
+<h3 align="center">1. Electromagnetic Waves and Schrodinger equation</h3>
+<h4>Motivation</h4>
+<p>Relate diffraction phenomenon to quantum machanics. Practical example is <a href="https://en.wikipedia.org/wiki/Davisson%E2%80%93Germer_experiment">Davisson Germer Experiment</a> which confirms particle-wave duality.</p>
+
+<h4>Electromagnetic Waves</h4>
+<p>In the discussion below, denote \(\left(\mathbf{E}\left(\mathbf{r},t\right), \mathbf{B}\left(\mathbf{r},t\right)\right)\) as EM waves.<br><br>
+    Very often, we regard electromagnetic waves as ideal wave, which is however inaccurate since the energy of real wave must not diverge. The approximation, however, is enough for us to give reasonable conclusions. So in the discussion below, we will use the approximation. 
+    <br> <br>
+    Using the approximation, an ideal wave is written as 
+    $$ \exp{\left\{i \left(\mathbf{k}\cdot\mathbf{r}-\omega t\right)\right\}}$$
+
+    From de Broglie relations, 
+    $$ E = \hbar \omega$$,
+    $$ \mathbf{p} = \hbar \mathbf{k} $$
+
+    The ideal wave can be rewritten as 
+    $$ \exp{\left\{i\mathbf{p}\cdot\mathbf{r}/\hbar - i Et/\hbar\right\}}$$
+
+    Knowing that electromagnetic waves are solutions to the wave equation s.t.
+    $$ \nabla^2 \mathbf{E} - \frac{1}{c^2} \partial_t^2 \mathbf{E} = 0$$
+
+    If we were to simplify the expression, we can always rewrite electromagnetic waves into the following form
+    \[\mathbf{E} = \vec{\mathcal{E}}\psi\]
+
+    where \(\vec{\mathcal{E}}\) is the polarization of wave, and \(\psi\) is the scalar wavefunction.
+
+    If we put the expression of ideal wave into the wave equation, it can be seen obvious that
+    $$ \nabla \psi = \mathbf{p} \left(\frac{i}{\hbar}\right)\psi$$.
+    $$ \partial_t \psi = \frac{-i}{\hbar}E\psi$$
+
+    It is thus derived informally that the two operators
+    $$ \hat{E} = i \hbar \partial_t, \;\;\hat{p} = \frac{\hbar}{i}\nabla \psi$$.
+
+</p> 
+
+<p>For light, we already know \(E=pc\). So inversely, we derive can always restore the wave-equation by considering 
+    $$ \hat{E}^2 \psi = \hat{p^2} c^2\psi$$.
+
+    For non-relativistic particle with mass \(m\) in potential field \(V\left(\mathbf{r},t\right)\), the energy is 
+    $$ E = \frac{p^2}{2m} + V$$
+
+    If we treat the energy and momentum as operators, we can informally derive Schrodinger Equation.
+    $$ i\hbar \partial_t \psi = \frac{1}{m} \left(\frac{\hbar}{i}\nabla\right)^2 \psi + V\psi$$
+    
+    Disclaimer: This is NOT the original derivation. The formal derivation cannot be donw without assumptions.
 </p>
+
+<h4>References</h4>
+<p>Lectures on Quantum Mechanics by You-Quan Li</p>
+<p></p>
 
 </body>
 </html>
